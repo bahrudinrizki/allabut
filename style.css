@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    padding: 20px;
+    max-width: 900px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.typing-text {
+    font-size: 1.4em;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 5s steps(40, end) forwards, blink 0.8s step-end infinite;
+    margin-bottom: 30px;
+}
+
+/* Animasi mengetik */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Galeri Foto */
+.photo-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.photo-gallery img {
+    width: 250px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Hati animasi */
+.hearts {
+    position: relative;
+    margin-top: 20px;
+}
+
+.heart {
+    width: 20px;
+    height: 20px;
+    background-color: #ff4e8d;
+    position: absolute;
+    transform: rotate(45deg);
+    animation: float 4s ease-in-out infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #ff4e8d;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: -10px;
+    top: 0;
+}
+
+.heart:nth-child(1) {
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 50%;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(3) {
+    left: 80%;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0% {
+        bottom: 0;
+        opacity: 1;
+        transform: scale(1) rotate(45deg);
+    }
+    100% {
+        bottom: 100px;
+        opacity: 0;
+        transform: scale(1.5) rotate(45deg);
+    }
+}
